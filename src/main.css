@@ -9,5 +9,8 @@ body,
 
 .widget {
   padding: 10px;
-  
+}
+
+.esri-ui .esri-attribution {
+  left: auto !important;
 }
