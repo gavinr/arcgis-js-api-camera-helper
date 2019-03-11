@@ -1,13 +1,12 @@
 require([
   "esri/Map",
   "esri/views/SceneView",
-  "esri/views/MapView",
   "esri/widgets/Search",
   "axios",
   "beautify",
   "dojo/domReady!"
 ],
-function(Map, SceneView, MapView, Search, axios, beautify) {
+function(Map, SceneView, Search, axios, beautify) {
   var map = new Map({
     basemap: "hybrid",
     ground: "world-elevation"
