@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { loadModules } from "esri-loader";
 
-export default function Map() {
+interface MapProps {
+  onCameraChange: any; // help!
+}
+
+export default function Map({ onCameraChange }: MapProps) {
   let mapEl = useRef<HTMLElement>(null);
   // const [view, setView] = useState(null);
 
@@ -32,6 +36,9 @@ export default function Map() {
         view.ui.add(searchWidget, {
           position: "top-right"
         });
+
+        view.watch("camera", onCameraChange);
+        onCameraChange(view.camera); // call once!
       });
     });
 
