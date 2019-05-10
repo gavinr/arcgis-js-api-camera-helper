@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { loadModules } from "esri-loader";
 
 interface MapProps {
-  onCameraChange: any; // help!
+  onCameraChange: (args: object) => void;
 }
 
 export default function Map({ onCameraChange }: MapProps) {

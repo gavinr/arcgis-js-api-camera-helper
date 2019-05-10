@@ -4,14 +4,14 @@ interface CameraProps {
   camera: object;
 }
 export default function CameraDetails({ camera }: CameraProps) {
-  const copyTextArea = useRef<HTMLTextAreaElement>(
-    document.createElement("textarea") // help - if I do not do this, get "possibly null" TS issue below
-  );
+  const copyTextArea = useRef<HTMLTextAreaElement>(null);
 
   function copyJsonButtonClickHandler() {
-    copyTextArea.current.focus();
-    copyTextArea.current.select();
-    document.execCommand("copy");
+    if (copyTextArea && copyTextArea.current) {
+      copyTextArea.current.focus();
+      copyTextArea.current.select();
+      document.execCommand("copy");
+    }
   }
   return (
     <div className="CameraDetails">
