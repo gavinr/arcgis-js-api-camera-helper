@@ -1,0 +1,16 @@
+html,
+body,
+#root,
+.App,
+.map {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
+
+.CameraDetails {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+}
