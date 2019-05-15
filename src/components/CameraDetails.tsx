@@ -1,8 +1,11 @@
 import React, { useRef } from "react";
 
+import Button from 'calcite-react/Button';
+
 interface CameraProps {
   camera: object;
 }
+
 export default function CameraDetails({ camera }: CameraProps) {
   const copyTextArea = useRef<HTMLTextAreaElement>(null);
 
@@ -23,14 +26,14 @@ export default function CameraDetails({ camera }: CameraProps) {
         ref={copyTextArea}
       />
       <br />
-      <a
+      <Button
         className="btn btn-clear"
         onClick={() => {
           copyJsonButtonClickHandler();
         }}
       >
         Copy JSON
-      </a>
+      </Button>
 
       <form
         action="https://codepen.io/pen/define"
@@ -39,11 +42,10 @@ export default function CameraDetails({ camera }: CameraProps) {
         className="right"
       >
         <input type="hidden" id="formDataCodepen" name="data" value="" />
-        <input
+        <Button
           type="submit"
-          value="New app at this location"
-          className="btn right"
-        />
+          className="right"
+        >New app at this location</Button>
       </form>
     </div>
   );
