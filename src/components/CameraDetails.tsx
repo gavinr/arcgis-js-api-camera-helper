@@ -25,10 +25,8 @@ export default function CameraDetails({ camera }: CameraProps) {
   const [calculatedFullRequest, setCalculatedFullRequest] = useState('');
 
   useEffect(() => {
-    console.log('useEffect');
-
+    // we should probably change this to, instead of running every time, to only run when "new app" button is clicked.
     function createCodepen(cameraJsCode: object) {
-      console.log('createCodepen', cameraJsCode);
       const styleTemplate = raw("../templates/style.css");
       const htmlHeadTemplate = raw("../templates/head.html");
       const htmlTemplate = raw("../templates/html.html");

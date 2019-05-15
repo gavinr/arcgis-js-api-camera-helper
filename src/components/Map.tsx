@@ -45,7 +45,7 @@ export default function Map({ onCameraChange }: MapProps) {
     return () => {
       // mapEl = null;
     };
-  }, []);
+  }, []); // eslint-disable-line
 
   // https://github.com/react-bootstrap/react-bootstrap/issues/3568#issuecomment-487276679
   return <div className="map" ref={mapEl as React.RefObject<any>} />;
