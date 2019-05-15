@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import raw from "raw.macro";
 import beautify from 'js-beautify';
 import Button from 'calcite-react/Button';
+import Instructions from "./Instructions";
 
 interface CameraProps {
   camera: object;
@@ -65,6 +66,7 @@ export default function CameraDetails({ camera }: CameraProps) {
   }
   return (
     <div className="CameraDetails">
+      <Instructions></Instructions>
       <textarea
         rows={15}
         cols={50}

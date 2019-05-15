@@ -7,7 +7,7 @@
   "bugs": {
     "url": "https://github.com/gavinr/arcgis-js-api-camera-helper/issues"
   },
-  "homepage": "https://github.com/gavinr/arcgis-js-api-camera-helper#readme",
+  "homepage": "https://arcgis-js-api-camera-helper.gavinr.com/",
   "private": false,
   "dependencies": {
     "@types/jest": "24.0.12",
@@ -16,6 +16,7 @@
     "@types/react": "16.8.17",
     "@types/react-dom": "16.8.4",
     "calcite-react": "^0.34.0",
+    "calcite-ui-icons-react": "^0.6.0",
     "esri-loader": "^2.9.2",
     "js-beautify": "^1.10.0",
     "node-sass": "^4.12.0",
