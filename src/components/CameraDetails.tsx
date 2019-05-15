@@ -1,16 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import raw from "raw.macro";
 import beautify from 'js-beautify';
-
-const styleTemplate = raw("../templates/style.css");
-const htmlHeadTemplate = raw("../templates/head.html");
-const htmlTemplate = raw("../templates/html.html");
-const jsTemplate = raw("../templates/js.txt");
+import Button from 'calcite-react/Button';
 
 interface CameraProps {
   camera: object;
 }
-
 
 // have to do this since space_in_empty_paren is not in 
 // https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/js-beautify
@@ -24,6 +19,11 @@ declare global {
 }
 
 export default function CameraDetails({ camera }: CameraProps) {
+  const styleTemplate = raw("../templates/style.css");
+  const htmlHeadTemplate = raw("../templates/head.html");
+  const htmlTemplate = raw("../templates/html.html");
+  const jsTemplate = raw("../templates/js.txt");
+
   const copyTextArea = useRef<HTMLTextAreaElement>(null);
   const [calculatedFullRequest, setCalculatedFullRequest] = useState('');
 
@@ -70,14 +70,14 @@ export default function CameraDetails({ camera }: CameraProps) {
         ref={copyTextArea}
       />
       <br />
-      <a
+      <Button
         className="btn btn-clear"
         onClick={() => {
           copyJsonButtonClickHandler();
         }}
       >
         Copy JSON
-      </a>
+      </Button>
 
       <form
         action="https://codepen.io/pen/define"
@@ -86,11 +86,10 @@ export default function CameraDetails({ camera }: CameraProps) {
         className="right"
       >
         <input type="hidden" id="formDataCodepen" name="data" value={calculatedFullRequest} />
-        <input
+        <Button
           type="submit"
-          value="New app at this location"
-          className="btn right"
-        />
+          className="right"
+        >New app at this location</Button>
       </form>
     </div>
   );
