@@ -1,18 +1,29 @@
 import React, { useEffect, useRef } from "react";
 import { loadModules } from "esri-loader";
+import Camera from "esri/Camera";
 
 interface MapProps {
   onCameraChange: (args: object) => void;
 }
+
+
 
 export default function Map({ onCameraChange }: MapProps) {
   let mapEl = useRef<HTMLElement>(null);
   // const [view, setView] = useState(null);
 
   useEffect(() => {
-    loadModules(["esri/Map", "esri/views/SceneView", "esri/widgets/Search"], {
+    loadModules(["esri/Map", "esri/views/SceneView", "esri/widgets/Search", "esri/geometry/support/webMercatorUtils"], {
       css: true
-    }).then(([Map, SceneView, Search]) => {
+    }).then(([Map, SceneView, Search, webMercatorUtils]) => {
+
+      function cameraToWgs84(camera: Camera): Camera {
+        const cameraClone = camera.clone();
+        const wgs84Position = webMercatorUtils.webMercatorToGeographic(camera.position);
+        cameraClone.position = wgs84Position;
+        return cameraClone;
+      }
+
       if (!mapEl) {
         // component or app was likely destroyed
         return;
@@ -29,7 +40,6 @@ export default function Map({ onCameraChange }: MapProps) {
       });
 
       view.when(() => {
-        // setView(view);
         var searchWidget = new Search({
           view: view
         });
@@ -37,8 +47,10 @@ export default function Map({ onCameraChange }: MapProps) {
           position: "top-right"
         });
 
-        view.watch("camera", onCameraChange);
-        onCameraChange(view.camera); // call once!
+        view.watch("camera", (camera: Camera) => {
+          onCameraChange(cameraToWgs84(camera));
+        });
+        onCameraChange(cameraToWgs84(view.camera)); // call once!
       });
     });
 
