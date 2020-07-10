@@ -1,8 +1,8 @@
 {
   "name": "arcgis-js-api-camera-helper",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Camera helper for 3D web apps in the ArcGIS API for JavaScript",
-  "author": "Gavin Rehkemper <gavin@gavinr.com>",
+  "author": "Gavin Rehkemper (https://gavinr.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gavinr/arcgis-js-api-camera-helper/issues"
@@ -10,22 +10,22 @@
   "homepage": "https://arcgis-js-api-camera-helper.gavinr.com/",
   "private": false,
   "dependencies": {
-    "@types/arcgis-js-api": "^4.15.0",
-    "@types/jest": "25.2.1",
-    "@types/js-beautify": "^1.8.2",
-    "@types/node": "13.11.1",
-    "@types/react": "16.9.34",
-    "@types/react-dom": "16.9.6",
-    "calcite-react": "^0.50.0",
-    "calcite-ui-icons-react": "^0.11.0",
-    "esri-loader": "^2.14.0",
+    "@types/arcgis-js-api": "^4.16.0",
+    "@types/jest": "26.0.4",
+    "@types/js-beautify": "^1.11.0",
+    "@types/node": "14.0.22",
+    "@types/react": "16.9.42",
+    "@types/react-dom": "16.9.8",
+    "calcite-react": "^0.52.0",
+    "calcite-ui-icons-react": "^0.20.0",
+    "esri-loader": "^2.15.0",
     "js-beautify": "^1.11.0",
-    "node-sass": "^4.13.1",
-    "raw.macro": "^0.3.0",
+    "node-sass": "^4.14.1",
+    "raw.macro": "^0.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "typescript": "3.8.3"
+    "typescript": "3.9.6"
   },
   "scripts": {
     "start": "react-scripts start",
