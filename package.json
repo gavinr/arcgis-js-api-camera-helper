@@ -1,6 +1,6 @@
 {
   "name": "arcgis-js-api-camera-helper",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Camera helper for 3D web apps in the ArcGIS API for JavaScript",
   "author": "Gavin Rehkemper (https://gavinr.com)",
   "license": "MIT",
